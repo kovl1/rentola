@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Устанавливает размер элементов с учетом padding и border */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif; /* Базовый шрифт для страницы */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    font-family: 'Halant', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0D2B4B; /* Темно-синий фон шапки */
+}
+
+.header__logo-img {
+    width: 115px;
+    cursor: default; /* Отключает курсор-указатель для логотипа */
+}
+
+.header__nav {
+    display: flex;
+    gap: 100px; /* Расстояние между ссылками навигации */
+    margin-left: 100px;
+}
+
+.header__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.header__link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания */
+}
+
+.header__link:hover::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.header__auth {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer; /* Курсор-указатель для блока авторизации */
+}
+
+.header__auth-icon {
+    width: 36px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.header__auth-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.block-1 {
+    margin: 45px 60px; /* Отступы для основного блока */
+    flex: 1 0 auto; /* Позволяет блоку растягиваться, но не сжиматься меньше контента */
+}
+
+.block-1__title {
+    font-family: 'Tahoma', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #0D2B4B;
+    padding-bottom: 40px;
+    text-align: left; /* Заголовок личного кабинета */
+}
+
+.block-1__details {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px; /* Блок с личной информацией */
+}
+
+.block-1__detail {
+    display: flex;
+    align-items: center;
+}
+
+.block-1__detail-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    margin-right: 10px; /* Текст описания поля */
+}
+
+.block-1__input, .password-1__input {
+    margin: 5px 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    border: 2px solid #0D2B4B;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 0px 10px;
+    display: inline-block; /* Позволяет ширине зависеть от содержимого */
+    width: 229px; /* Минимальная ширина */
+    max-width: none; /* Убираем ограничение максимальной ширины */
+    white-space: nowrap; /* Предотвращает перенос текста */
+    overflow: hidden; /* Скрывает лишний текст, если он выходит за пределы */
+}
+
+.block-1__orders {
+    margin: 0 0 45px; /* Блок с заказами */
+}
+
+.block-1__order {
+    display: flex;
+    align-items: center;
+    border: 2px solid #0D2B4B;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1789px;
+    margin: 0 auto 25px;
+    padding: 15px; /* Карточка заказа */
+}
+
+.block-1__order-image {
+    width: 212px;
+    height: 134px;
+    border-radius: 10px;
+    margin-right: 60px; /* Изображение дома */
+}
+
+.block-1__order-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; /* Информация о заказе */
+}
+
+.block-1__order-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px; /* Строка с данными заказа */
+}
+
+.block-1__order-text {
+    font-family: 'Raleway', sans-serif;
+    color: #0D2B4B;
+    font-size: 26px;
+    margin-right: 40px; /* Текст в карточке заказа */
+}
+
+.block-1__order-text--order {
+    min-width: 120px; /* Номер заказа */
+}
+
+.block-1__order-text--price {
+    min-width: 150px; /* Цена */
+}
+
+.block-1__order-text--status {
+    min-width: 200px; /* Статус */
+}
+
+.block-1__order-text--name {
+    min-width: 150px; /* Имя */
+}
+
+.block-1__order-text--checkin {
+    min-width: 200px; /* Дата заезда */
+}
+
+.block-1__order-text--checkout {
+    min-width: 200px; /* Дата отъезда */
+}
+
+.block-1__order-text--phone {
+    min-width: 250px; /* Номер телефона */
+}
+
+.block-1__review-btn {
+    width: 258px;
+    height: 54px;
+    background-color: transparent;
+    color: #0D2B4B;
+    border: 2px solid #0D2B4B;
+    border-radius: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 20px; /* Кнопка отмены заказа */
+}
+
+.block-1__review-btn:hover {
+    background-color: #0D2B4B;
+    color: #fff; /* Эффект наведения на кнопку */
+}
+
+.block-1__logout-btn {
+    background-color: transparent;
+    color: #0D2B4B;
+    border: 2px solid #0D2B4B;
+    border-radius: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 80px;
+}
+
+.block-1__logout-btn:hover {
+    background-color: #0D2B4B;
+    color: #fff;
+}
+
+.no-orders-message {
+    text-align: center; /* Центрирование текста */
+    font-size: 24px;
+    color: #333; 
+    padding: 20px; 
+    width: 100%; /* Ширина для центрирования */
+}
+
+.footer {
+    flex-shrink: 0; /* Футер не сжимается */
+    width: 100%;
+    background-color: #0D2B4B;
+    color: #fff;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Raleway', sans-serif; /* Подвал */
+}
+
+.footer__about,
+.footer__contact {
+    flex: 0 0 400px;
+    text-align: left;
+}
+
+.footer__about {
+    margin-right: 120px;
+    margin-left: 45px;
+}
+
+.footer__logo {
+    flex: 0 0 400px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.footer__contact {
+    margin-left: 160px;
+    text-align: left;
+}
+
+.footer__title {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 15px 0 10px;
+}
+
+.footer__text {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.footer__logo-img {
+    width: 217px;
+}
+
+.footer__copyright {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 0.3; /* Копирайт в подвале */
+}

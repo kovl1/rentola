@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Устанавливает размер элементов с учетом padding и border */
+}
+
+body {
+    font-family: 'Raleway', sans-serif; /* Базовый шрифт для страницы */
+}
+
+.wrapper {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* Скрывает содержимое за пределами контейнера */
+}
+
+.header {
+    position: relative;
+    min-height: 366px;
+    background: url('../img/BG/bg-top.png') no-repeat center top; /* Фоновое изображение шапки */
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.header__header {
+    padding: 25px 60px 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Halant', sans-serif;
+    font-weight: 600;
+    position: relative;
+    z-index: 10; /* Шапка над другими элементами */
+    color: #fff;
+}
+
+.header__logo-img {
+    width: 115px;
+    cursor: default; /* Отключает курсор-указатель для логотипа */
+}
+
+.header__nav {
+    display: flex;
+    gap: 100px; /* Расстояние между ссылками навигации */
+    margin-left: 100px;
+}
+
+.header__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.header__link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания */
+}
+
+.header__link:hover::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.header__auth {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer; /* Курсор-указатель для блока авторизации */
+}
+
+.header__auth-icon {
+    width: 36px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.header__auth-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.header__auth-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания ссылки */
+}
+
+.header__auth:hover .header__auth-link::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.header__auth::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания блока */
+}
+
+.header__auth:hover::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+    transform-origin: center;
+}
+
+.catalog__title {
+    color: #fff;
+    font-family: "Tahoma", sans-serif;
+    font-weight: bold;
+    font-size: 52px;
+    margin: 130px 0 0 60px;
+    text-align: left; /* Заголовок страницы */
+}
+
+.block-1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 90px 0;
+    max-width: 1600px;
+    margin: 0px 190px 0px 400px; /* Контейнер с контактной информацией и формой */
+}
+
+.block-1-info {
+    max-height: 260px;
+    max-width: 300px; /* Блок с телефонами и email */
+}
+
+.block-1__title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    color: #0D2B4B;
+    margin-bottom: 15px; /* Заголовки для телефонов и email */
+}
+
+.block-1__phone {
+    margin-bottom: 35px; /* Отступ для блока с телефонами */
+}
+
+.block-1__phonenum,
+.block-1__email {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 5px; /* Телефоны и email */
+}
+
+.block-1-form {
+    min-width: 715px;
+    max-height: 300px;
+    margin: 0px; /* Блок формы обратной связи */
+}
+
+.block-1-form__title {
+    font-family: 'Halant', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: #0D2B4B;
+    margin-bottom: 20px; /* Заголовок формы */
+}
+
+.block-1-form__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px; /* Контейнер формы */
+}
+
+.block-1-form__left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Левая часть формы с полями ввода */
+}
+
+.block-1-form__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Правая часть формы с текстовой областью и кнопкой */
+}
+
+.block-1-form__input {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px; /* Поля ввода формы */
+}
+
+.block-1-form__input.focus {
+    border: 2px solid #0D2B4B; /* Стиль для активного поля ввода */
+}
+
+.block-1-form__textarea {
+    width: 330px;
+    height: 120px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    resize: none; /* Текстовая область */
+}
+
+.block-1-form__textarea:focus {
+    border: 2px solid #0D2B4B; /* Стиль для активной текстовой области */
+}
+
+.block-1-form__button {
+    width: 330px;
+    padding: 5px;
+    background-color: #0D2B4B;
+    border: 2px solid #0D2B4B;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 24px;
+    font-family: 'Halant', sans-serif;
+    cursor: pointer;
+    display: block; /* Кнопка отправки формы */
+}
+
+.block-1-form__button:hover {
+    background-color: #fff;
+    border: 2px solid #0D2B4B;
+    color: #0D2B4B; /* Эффект наведения на кнопку */
+}
+
+.footer {
+    margin: 0 auto;
+    background-color: #0D2B4B;
+    color: #fff;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Raleway', sans-serif; /* Подвал */
+}
+
+.footer__about,
+.footer__contact {
+    flex: 0 0 400px;
+    text-align: left;
+}
+
+.footer__about {
+    margin-right: 120px;
+    margin-left: 45px;
+}
+
+.footer__logo {
+    flex: 0 0 400px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.footer__contact {
+    margin-left: 160px;
+    text-align: left;
+}
+
+.footer__title {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 15px 0 10px;
+}
+
+.footer__text {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.footer__logo-img {
+    width: 217px;
+}
+
+.footer__copyright {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 0.3; /* Копирайт в подвале */
+}

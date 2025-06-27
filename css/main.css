@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Устанавливает размер элементов с учетом padding и border */
+}
+
+.wrapper {
+    margin: 0 auto;
+    background: url('../img/BG/bg-rentola.png') no-repeat center top; /* Фоновое изображение с фиксированным позиционированием */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden; /* Скрывает содержимое, выходящее за пределы */
+}
+
+.header {
+    padding: 25px 60px 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Halant', sans-serif;
+    font-weight: 600;
+    position: relative;
+    z-index: 10; /* Помещает шапку поверх других элементов */
+}
+
+.header__logo-img {
+    width: 115px;
+    cursor: default; /* Отключает курсор-указатель на логотипе */
+}
+
+.header__nav {
+    display: flex;
+    gap: 100px; /* Расстояние между ссылками навигации */
+    margin-left: 100px;
+}
+
+.header__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.header__link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания при наведении */
+}
+
+.header__link:hover::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.header__auth {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer; /* Курсор-указатель для блока авторизации */
+}
+
+.header__auth-icon {
+    width: 36px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.header__auth-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.header__auth-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания для ссылки входа */
+}
+
+.header__auth:hover .header__auth-link::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.header__auth::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания всего блока авторизации */
+}
+
+.header__auth:hover::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+    transform-origin: center;
+}
+
+.block-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-height: 100vh; /* Ограничивает высоту секции высотой экрана */
+    overflow: hidden; 
+}
+
+.block-1__content {
+    text-align: center;
+    max-width: 1400px;
+}
+
+.block-1__title {
+    color: #fff;
+    font-family: 'Modern Sans Serif 7', sans-serif;
+    font-weight: 400;
+    font-size: 134px;
+    margin-top: 150px;
+}
+
+.block-1__pattern {
+    width: 400px;
+    margin: 22px auto;
+}
+
+.block-1__subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 170px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.block-1__btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 22px 228px;
+    font-family: 'Halant', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Анимация кнопки при наведении */
+}
+
+.block-1__btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.block-1__arrow {
+    display: block;
+    margin: 70px auto 30px auto;
+    width: 115px;
+}
+
+.block-2 {
+    margin: 0 auto;
+    background: #fff;
+}
+
+.block-2__pattern-top,
+.block-2__pattern-bottom {
+    width: 100%;
+    height: auto;
+}
+
+.block-2__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 280px;
+}
+
+.block-2__content > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+.block-2__title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #0D2B4B;
+    margin-bottom: 20px;
+}
+
+.block-2__text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0D2B4B;
+    line-height: 1.5;
+    max-width: 360px;
+}
+
+.block-2__separator {
+    width: 2px;
+    height: 130px;
+    background: #DCDCDC; /* Вертикальная линия-разделитель */
+    margin: 40px 60px 0;
+}
+
+.block-3 {
+    margin: 0 auto;
+    background: url('../img/BG/bg-kitchen.png') no-repeat center top; /* Фон секции кухни */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding: 80px 0;
+}
+
+.block-3__header {
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+    font-size: 90px;
+    line-height: 1;
+    color: #fff;
+}
+
+.block-3__subheader {
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+    font-size: 34.5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+.block-3__container {
+    width: 1614px;
+    height: 706px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 40px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+}
+
+.block-3__image {
+    width: 625px;
+    height: auto;
+    border-radius: 40px;
+    margin: 0px 50px 0px 13px;
+}
+
+.block-3__text-content {
+    flex-grow: 1; /* Занимает оставшееся пространство */
+}
+
+.block-3__title {
+    font-family: Raleway, sans-serif;
+    font-size: 46px;
+    color: #FF4060;
+    margin: -10px 0px 20px;
+}
+
+.block-3__description {
+    font-family: Raleway, sans-serif;
+    font-size: 25px;
+    color: #565656;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    text-align: justify;
+}
+
+.block-3__chefoffer {
+    font-family: Raleway, sans-serif;
+    font-size: 27px;
+    font-weight: bold;
+    color: #0D2B4B;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.block-3__points {
+    font-family: Raleway, sans-serif;
+    font-size: 25px;
+    color: #0D2B4B;
+    line-height: 1.9;
+    margin-bottom: 10px;
+    text-decoration: none;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.block-3__contact {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px 30px;
+}
+
+.block-3__phone {
+    font-family: Raleway, sans-serif;
+    font-size: 34px;
+    color: #FF4060;
+    margin-right: 20px;
+}
+
+.block-3__hours {
+    display: flex;
+    align-items: center;
+    margin-left: 180px;
+}
+
+.block-3__hours-icon {
+    width: 35px;
+    margin: 10px 10px 0px 0px;
+}
+
+.block-3__hours-text {
+    font-family: Raleway, sans-serif;
+    font-size: 34px;
+    color: #FF4060;
+}
+
+.block-4 {
+    margin: 0 auto;
+    padding-bottom: 60px;
+    text-align: center;
+    background: #fff;
+}
+
+.block-4__pattern-top {
+    width: 100%;
+    height: auto;
+}
+
+.block-4__title {
+    font-family: Raleway, sans-serif;
+    font-size: 54px;
+    font-weight: 300;
+    color: #0D2B4B;
+    margin: 40px 0 0;
+}
+
+.block-4__text {
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    color: #0D2B4B;
+    margin-bottom: 40px;
+}
+
+.block-4__icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Расстояние между иконками услуг */
+    margin-bottom: 40px;
+}
+
+.block-4__icon {
+    width: 124px;
+    height: auto;
+}
+
+.block-4__btn {
+    display: inline-block;
+    background: transparent;
+    color: #0D2B4B;
+    border: 2px solid #0D2B4B;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Анимация кнопки при наведении */
+}
+
+.block-4__btn:hover {
+    background-color: #0D2B4B;
+    color: #fff;
+}
+
+.block-5 {
+    margin: 0 auto;
+    padding: 60px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.block-5__title {
+    font-family: Raleway, sans-serif;
+    font-size: 54px;
+    color: #0D2B4B;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.block-5__reviews {
+    height: 170px;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1150px;
+    position: relative;
+}
+
+.block-5__review {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Анимация появления/исчезновения отзыва */
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    line-height: 1.5;
+}
+
+.block-5__review.active {
+    opacity: 1; /* Активный отзыв становится видимым */
+}
+
+.block-5__quote-icon {
+    width: 74px;
+    vertical-align: baseline;
+    margin-right: 10px;
+}
+
+.block-5__text {
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+    color: #000;
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.block-5__author {
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    text-align: left;
+    margin-left: 0;
+}
+
+.footer {
+    margin: 0 auto;
+    background-color: #0D2B4B;
+    color: #fff;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer__about, .footer__contact {
+    flex: 0 0 400px;
+    text-align: left;
+}
+
+.footer__about {
+    margin-right: 120px;
+    margin-left: 45px;
+}
+
+.footer__logo {
+    flex: 0 0 400px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.footer__contact {
+    margin-left: 160px;
+    text-align: left;
+}
+
+.footer__title {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 15px 0px 10px;
+}
+
+.footer__text {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.footer__logo-img {
+    width: 217px;
+}
+
+.footer__copyright {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 0.3;
+}

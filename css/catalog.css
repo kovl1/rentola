@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Устанавливает размер элементов с учетом padding и border */
+}
+
+body {
+    background-color: #ECECEC; /* Серый фон страницы */
+}
+
+.wrapper {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* Скрывает содержимое за пределами контейнера */
+}
+
+.header {
+    position: relative;
+    min-height: 366px;
+    background: url('../img/BG/bg-top.png') no-repeat center top; /* Фоновое изображение шапки */
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.header__header {
+    padding: 25px 60px 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Halant', sans-serif;
+    font-weight: 600;
+    position: relative;
+    z-index: 10; /* Шапка над другими элементами */
+    color: #fff;
+}
+
+.header__logo-img {
+    width: 115px;
+    cursor: default; /* Отключает курсор-указатель для логотипа */
+}
+
+.header__nav {
+    display: flex;
+    gap: 100px; /* Расстояние между ссылками навигации */
+    margin-left: 100px;
+}
+
+.header__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.header__link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания */
+}
+
+.header__link:hover::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.header__auth {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer; /* Курсор-указатель для блока авторизации */
+}
+
+.header__auth-icon {
+    width: 36px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.header__auth-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.header__auth-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания ссылки */
+}
+
+.header__auth:hover .header__auth-link::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.header__auth::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease, left 0s ease 0.3s; /* Анимация подчеркивания блока */
+}
+
+.header__auth:hover::after {
+    width: 100%;
+    left: 0;
+    transition: width 0.3s ease;
+    transform-origin: center;
+}
+
+.catalog__title {
+    color: #fff;
+    font-family: "Tahoma", sans-serif;
+    font-weight: bold;
+    font-size: 52px;
+    margin: 130px 0 0 60px;
+    text-align: left; /* Заголовок каталога */
+}
+
+.block-1-content-wrapper {
+    padding: 30px 60px;
+    background-color: #ECECEC; /* Серый фон для контента */
+}
+
+.block-1__content {
+    position: relative;
+    z-index: 1; /* Контент над фоном */
+}
+
+.content__subtitle {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #000;
+    margin: 0 0 30px 10px;
+    text-align: left; /* Подзаголовок с количеством домов */
+}
+
+.houses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Сетка из 4 колонок */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.house-card {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden; /* Скрывает содержимое за пределами карточки */
+    margin-bottom: 10px;
+}
+
+.house-card__image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0; /* Скругленные углы сверху */
+}
+
+.house-card__title {
+    font-family: "Tahoma", sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: #0D2B4B;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.house-card__description {
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    max-width: 350px;
+    margin: 0 auto;
+    color: #0D2B4B;
+    text-align: center;
+}
+
+.house-card__price {
+    font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    color: #FFBA00; /* Желтый цвет цены */
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.price-unit {
+    font-family: "Raleway", sans-serif;
+    font-size: 26px;
+    color: #0D2B4B;
+    margin-left: 5px; /* Единица измерения цены */
+}
+
+.house-card__capacity {
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    color: #0D2B4B;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.house-card__button {
+    display: block;
+    width: 321px;
+    height: 58px;
+    margin: 0 auto 20px;
+    background-color: transparent;
+    color: #0D2B4B;
+    text-decoration: none;
+    border: 2px solid #0D2B4B;
+    border-radius: 10px;
+    font-family: "Halant", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    line-height: 58px;
+    transition: all 0.3s ease; /* Анимация кнопки */
+    margin-top: 20px;
+}
+
+.house-card__button:hover {
+    background-color: #0D2B4B;
+    color: #fff; /* Эффект наведения на кнопку */
+}
+
+.footer {
+    margin: 0 auto;
+    background-color: #0D2B4B;
+    color: #fff;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Raleway', sans-serif; /* Подвал */
+}
+
+.footer__about, .footer__contact {
+    flex: 0 0 400px;
+    text-align: left;
+}
+
+.footer__about {
+    margin-right: 120px;
+    margin-left: 45px;
+}
+
+.footer__logo {
+    flex: 0 0 400px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.footer__contact {
+    margin-left: 160px;
+    text-align: left;
+}
+
+.footer__title {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 15px 0px 10px;
+}
+
+.footer__text {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.footer__logo-img {
+    width: 217px;
+}
+
+.footer__copyright {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 0.3; /* Копирайт в подвале */
+}
